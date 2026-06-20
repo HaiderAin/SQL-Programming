@@ -1,0 +1,90 @@
+
+## FULL OUTER JOIN Explanation
+
+A **FULL OUTER JOIN** returns **all rows from BOTH tables**, combining the results of both LEFT OUTER JOIN and RIGHT OUTER JOIN.
+
+### Visual Representation
+
+```
+LEFT TABLE (employee)          RIGHT TABLE (department)
+┌──────────────┐              ┌──────────────┐
+│ Aarav        │              │ IT Dept      │
+│ Maya         │              │ DB Dept      │
+│ Liam (NULL)  │──────JOIN──── │ Infra Dept   │
+│ Rajesh (NULL)│              │ R&D Dept (NULL)
+└──────────────┘              └──────────────┘
+
+FULL OUTER JOIN = All from LEFT + All from RIGHT
+```
+
+### Syntax
+
+```sql
+SELECT e.first_name, d.department_ID, d.department_name
+FROM employee e
+FULL OUTER JOIN department d
+USING (employee_id);
+```
+
+### Expected Output for Your Data
+
+| first_name | department_ID | department_name |
+|------------|---------------|-----------------|
+| Aarav | 101 | Information Technology |
+| Maya | 102 | Database Services |
+| Ethan | 103 | Business Systems |
+| Sophia | 104 | Project Office |
+| Ananya | 106 | Operations Analysis |
+| Noah | 107 | Quality Assurance |
+| Isha | 108 | Design |
+| Oliver | 109 | Cloud Engineering |
+| Priya | 110 | Human Resources |
+| **Liam** | **(NULL)** | **(NULL)** |
+| **Rajesh** | **(NULL)** | **(NULL)** |
+| **(NULL)** | **111** | **Research and Development** |
+
+### Key Differences
+
+| Join Type | Shows | Example |
+|-----------|-------|---------|
+| **INNER JOIN** | Only matching rows | 9 rows (only matched pairs) |
+| **LEFT OUTER JOIN** | All from left + matching right | 11 rows (all employees, some with NULL departments) |
+| **RIGHT OUTER JOIN** | All from right + matching left | 10 rows (all departments, some with NULL employees) |
+| **FULL OUTER JOIN** | All from both tables | 12 rows (all employees + all departments) |
+
+### FULL OUTER JOIN with Your Data
+
+```sql
+SELECT COALESCE(e.first_name, 'NO EMPLOYEE') as Employee_Name,
+       d.department_ID, 
+       d.department_name
+FROM employee e
+FULL OUTER JOIN department d
+USING (employee_id);
+```
+
+### Output with COALESCE
+
+| Employee_Name | department_ID | department_name |
+|---------------|---------------|-----------------|
+| Aarav | 101 | Information Technology |
+| Maya | 102 | Database Services |
+| Ethan | 103 | Business Systems |
+| Sophia | 104 | Project Office |
+| Ananya | 106 | Operations Analysis |
+| Noah | 107 | Quality Assurance |
+| Isha | 108 | Design |
+| Oliver | 109 | Cloud Engineering |
+| Priya | 110 | Human Resources |
+| **Liam** | **(NULL)** | **(NULL)** |
+| **Rajesh** | **(NULL)** | **(NULL)** |
+| **NO EMPLOYEE** | **111** | **Research and Development** |
+
+### When to Use FULL OUTER JOIN
+
+- Find all unmatched records from both tables
+- Data reconciliation and quality checks
+- Finding orphaned records (employees without departments AND departments without employees)
+- Complete data analysis
+
+✅ **FULL OUTER JOIN is useful when you need to see the complete picture of data from both tables, including all unmatched records!**
