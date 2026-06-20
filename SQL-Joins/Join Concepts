@@ -1,0 +1,29 @@
+Based on your current tables:
+employee(employee_id, first_name, last_name, job_title, hire_date, salary)
+department(department_id, department_name, location, employee_id)
+Here are the join concepts first, then 50 Oracle SQL practice problems from beginner to advanced. No solutions included, as requested.
+Join Concepts
+INNER JOIN
+Returns only matching rows from both tables. Example use case: employees who are assigned to a department.
+LEFT OUTER JOIN
+Returns all rows from the left table and matching rows from the right table. If no match exists, right-side columns show NULL. Example use case: all employees, including those not assigned to any department.
+RIGHT OUTER JOIN
+Returns all rows from the right table and matching rows from the left table. Example use case: all departments, including departments without matching employee details.
+FULL OUTER JOIN
+Returns all rows from both tables. Matching rows are combined; non-matching rows from either side show NULL.
+CROSS JOIN
+Returns every possible combination of rows between two tables. Example use case: pairing every employee with every department for planning or simulation.
+SELF JOIN
+Joins a table with itself. Your current employee table does not have a manager_id, so self joins can be practiced using comparisons like salary, hire date, or job title.
+NATURAL JOIN
+Automatically joins tables using columns with the same name. In your schema, both tables have employee_id, so Oracle can naturally join them.
+JOIN USING
+Joins tables using a shared column name, such as employee_id.
+JOIN ON
+The most flexible join syntax. You manually specify the join condition.
+NON-EQUI JOIN
+Uses conditions other than =, such as >, <, BETWEEN, etc. Example: compare employees by salary ranges or hire dates.
+ANTI JOIN Pattern
+Finds records in one table that do not have a match in another table, usually using LEFT JOIN ... WHERE right_column IS NULL.
+SEMI JOIN Pattern
+Finds rows from one table that have at least one matching row in another table, usually using EXISTS or IN.
