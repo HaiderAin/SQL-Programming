@@ -75,4 +75,11 @@ VALUES (109, 'Cloud Engineering', 'Phoenix', 9);
 INSERT INTO department (department_id, department_name, location, employee_id)
 VALUES (110, 'Human Resources', 'Atlanta', 10);
 
+ALTER TABLE department 
+MODIFY employee_id NULL;
+
+INSERT INTO department (department_id, department_name, location, employee_id)
+VALUES (111, 'Research and Development', 'San Diego', NULL);
+
 COMMIT;
+
