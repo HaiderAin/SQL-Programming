@@ -1,0 +1,113 @@
+Beginner Level
+====================
+Display each employee’s full name along with their department name using an INNER JOIN.
+
+Show employee ID, first name, job title, and department location for all employees who have a department.
+
+List all departments with the employee assigned to each department.
+
+Display employee full name and department name using Oracle JOIN ... ON syntax.
+
+Display employee full name and department name using Oracle JOIN ... USING(employee_id) syntax.
+
+Use NATURAL JOIN to show employees and their matching department details.
+
+Find all employees working in the Information Technology department.
+
+Find the department name and location of employee Maya Patel.
+
+Show all employees whose departments are located in Chicago.
+
+Display employee name, salary, department name, and department location sorted by salary from highest to lowest.
+
+Beginner to Intermediate
+==========================
+Show employees earning more than 70000 along with their department names.
+
+List employees hired after 2021-01-01 with their department details.
+
+Display all employees and their department information using a LEFT OUTER JOIN.
+
+Display all departments and their assigned employee information using a RIGHT OUTER JOIN.
+
+Use a FULL OUTER JOIN to display all employees and all departments, whether matched or unmatched.
+
+Find employees who do not have a matching department using a LEFT JOIN.
+
+Find departments that do not have a matching employee using a RIGHT JOIN or LEFT JOIN.
+
+Display employees whose department location starts with the letter S.
+
+Show department names where the assigned employee salary is greater than 80000.
+
+Display employee full name, department name, and location for departments located in New York, Chicago, or Dallas.
+
+Intermediate Level:
+===================
+Use table aliases to display employee name, job title, department name, and location.
+
+Show employees whose job title contains the word Engineer along with their department name.
+
+Find employees assigned to departments whose names contain the word Engineering.
+
+List employees and departments where the employee salary is between 65000 and 85000.
+
+Display employees hired before 2021 and their department names.
+
+Find the highest-paid employee along with their department details.
+
+Find the lowest-paid employee along with their department details.
+
+Show each department with the salary of its assigned employee.
+
+Display department locations and the job titles of employees working there.
+
+Find departments where the assigned employee was hired in the year 2023.
+
+CROSS JOIN Practice
+======================
+Generate all possible combinations of employees and departments using a CROSS JOIN.
+
+Create a planning list where every employee is paired with every department location.
+
+Count how many total combinations are produced by a CROSS JOIN between employee and department.
+
+Show every employee name with every department name, sorted by employee ID.
+
+Use a CROSS JOIN to simulate possible employee transfers to all available department locations.
+
+SELF JOIN Practice
+====================
+Find pairs of employees where one employee earns more than another employee.
+
+Find employees who were hired before other employees using a self join.
+
+Display pairs of employees who have the same job title keyword, such as both containing Engineer.
+
+Find employee pairs where the salary difference is less than 10000.
+
+Show each employee along with other employees hired after them.
+
+NON-EQUI JOIN Practice
+=======================
+Join employee and department using a condition where employee salary is greater than department ID multiplied by 500.
+
+Display employees and departments where the employee ID is less than the department ID minus 100.
+
+Find employee-department combinations where the employee salary is between department_id * 500 and department_id * 800.
+
+Show all employee and department combinations where the employee hire year is earlier than 2022 and the department ID is greater than 105.
+
+Use a non-equi join to compare employees with departments where employee.employee_id <> department.employee_id.
+
+Advanced Level
+=======================
+Find employees who are assigned to a department using a semi-join pattern with EXISTS.
+
+Find employees who are not assigned to any department using an anti-join pattern.
+
+Display department details only for departments whose assigned employee earns above the average salary.
+
+Show employees whose salary is greater than the salary of at least one employee in another department using a self join plus department join.
+
+Create a report showing employee name, salary, department name, location, and a salary category: High, Medium, or Low, using joins and CASE.
