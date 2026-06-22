@@ -1,0 +1,32 @@
+A **NON-EQUI JOIN** is a join where tables are matched using a condition **other than `=`**.
+
+Instead of equality, it uses operators like:
+
+```sql
+<   >   <=   >=   BETWEEN   !=
+```
+
+Example:
+
+```sql
+SELECT e.employee_name, e.salary, g.grade
+FROM employee e
+JOIN salary_grade g
+ON e.salary BETWEEN g.min_salary AND g.max_salary;
+```
+
+Here, the employee is matched to a salary grade where their salary falls **between** the grade’s minimum and maximum salary.
+
+So, unlike an equi join:
+
+```sql
+ON e.department_id = d.department_id
+```
+
+a non-equi join might be:
+
+```sql
+ON e.salary BETWEEN g.min_salary AND g.max_salary
+```
+
+In short: **NON-EQUI JOIN joins rows using comparison or range conditions instead of exact equality.**
